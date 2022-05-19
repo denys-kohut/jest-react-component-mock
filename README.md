@@ -11,7 +11,7 @@ import { oneMock, secondMock, thirdMock } from '../mocks';
 import { DemoComponent } from '../DemoComponent';
 
 jest.mock('../../../components/MyCoolItem', () => ({
-  MyCoolItem: (props) => mockComponent('MyCoolItem', props, true),
+  MyCoolItem: (props) => mockComponent('MyCoolItem', props, 🚀),
 }));
 
 describe('DemoComponent', () => {
@@ -50,7 +50,7 @@ exports[`should create simple "DemoComponent" component`] = `
     ≺MyCoolItem
       config={{"id": "113wsdfsdf"}}
       handker={'myHandler'}
-    ∕≻
+    />
   🚀
     </div>
   </div>

@@ -1,4 +1,4 @@
-module.exports.mockComponent = (componentName, props, withEmoji) => {
+module.exports.mockComponent = (componentName, props, emoji) => {
   const defaultTab = '\n      ';
   const functionTerm = 'function(){ [native code] }'
   const passedProps = Object.keys(props);
@@ -13,7 +13,7 @@ module.exports.mockComponent = (componentName, props, withEmoji) => {
         ? `'${value}'`
         : JSON.stringify(value)
 
-      return `${passedProperty}={${parsedValue === passedProperty ? passedProperty: parsedValue}}`;
+      return `${passedProperty}={${parsedValue}}`;
     })
     .join(defaultTab);
 
@@ -23,11 +23,11 @@ module.exports.mockComponent = (componentName, props, withEmoji) => {
     ∕≻`;
 
   const emojiComponent  = `
-  🚀
+  ${emoji}
     ≺${componentName}
       ${generatedProps}
     ∕≻
-  🚀`
+  ${emoji}`
 
-  return withEmoji ? emojiComponent : simpleComponent;
+  return emoji ? emojiComponent : simpleComponent;
 };
