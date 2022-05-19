@@ -8,7 +8,7 @@ module.exports.mockComponent = (componentName, props) => {
         ? 'function(){ [native code] }'
         : propValue;
 
-      return `${passedProperty}={${value}}`;
+      return `${passedProperty}={${JSON.stringify(value)}}`;
     })
     .join(defaultTab);
 
