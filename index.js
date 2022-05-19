@@ -6,9 +6,9 @@ module.exports.mockComponent = (componentName, props, emoji) => {
   const generatedProps = passedProps
     .map(passedProperty => {
       const propValue = props[passedProperty];
-      const value = typeof propValue === 'function' && !propValue.name
+      const value = typeof propValue === 'function'
         ? functionTerm
-        : propValue.name || propValue;
+        : propValue;
       const parsedValue = typeof value === 'string'
         ? `'${value}'`
         : JSON.stringify(value)

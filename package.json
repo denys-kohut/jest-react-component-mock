@@ -1,6 +1,6 @@
 {
   "name": "jest-react-component-mock",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "description": "Mock your React Components for the amazing snapshot testing. This package allows you to avoid lots of braking tests of parent components if one child was changed internally.",
   "main": "index.js",
   "scripts": {

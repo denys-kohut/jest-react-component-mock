@@ -2,6 +2,29 @@ Mock your React Components for the amazing snapshot testing. This package allows
 
 ## Mock React components in your Snapshots
 
+### How to use?
+
+`anyJest.test.js`:
+```jsx
+/**
+ * Function mock component and make string representation
+ * @param    {String}   componentName    Name of the Component
+ * @param    {Any}      props            properties, which component receives
+ * @param    {Boolean}  emoji?           flag to use rocket or not
+ * @return   {String}                    string representation of component
+ */
+function mockComponent (componentName, props, emoji) { [ 'native code' ] }
+
+// using standard jest mocking mechanism
+jest.mock('../../../pathToYourComponentWhichShouldBeMocked', () => ({
+  Component: (props) => mockComponent('Component', props, true),
+}));
+```
+
+
+
+### Example:
+
 `tests/DemoComponent.test.js`:
 ``` jsx
 import { create } from 'react-test-renderer';
@@ -11,7 +34,7 @@ import { oneMock, secondMock, thirdMock } from '../mocks';
 import { DemoComponent } from '../DemoComponent';
 
 jest.mock('../../../components/MyCoolItem', () => ({
-  MyCoolItem: (props) => mockComponent('MyCoolItem', props, 🚀),
+  MyCoolItem: (props) => mockComponent('MyCoolItem', props, true),
 }));
 
 describe('DemoComponent', () => {
