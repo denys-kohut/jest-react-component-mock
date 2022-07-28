@@ -23,11 +23,11 @@ module.exports.mockComponent = (componentName, props, emoji) => {
     ∕≻`;
 
   const emojiComponent  = `
-  ${emoji}
+  🚀
     ≺${componentName}
       ${generatedProps}
     ∕≻
-  ${emoji}`
+  🚀`
 
   const componentWithoutProps = `
     ≺${componentName} ∕≻`;
