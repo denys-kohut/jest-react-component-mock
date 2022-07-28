@@ -29,5 +29,10 @@ module.exports.mockComponent = (componentName, props, emoji) => {
     ∕≻
   🚀`
 
-  return emoji ? emojiComponent : simpleComponent;
+  const componentWithoutProps = `
+    ≺${componentName} ∕≻`;
+
+  const component = generatedProps ? simpleComponent : componentWithoutProps
+
+  return emoji ? emojiComponent : component;
 };
